@@ -1,12 +1,11 @@
 package sanja.com.klatch.krone.zeitung;
 
-public class PrintAbonnent implements  Abonnent{
-    //wenn mediaenverlag einen neuen artikelln herausbringt
+public class WebAbonnent implements Abonnent{
+
     private String name;
     private Medienverlag medienverlag;
 
-    public PrintAbonnent(String name, Medienverlag medienverlag) {
-
+    public WebAbonnent(String name, Medienverlag medienverlag) {
         this.name = name;
         this.medienverlag=medienverlag;
         medienverlag.addSubscriber(this);
@@ -14,8 +13,8 @@ public class PrintAbonnent implements  Abonnent{
 
     @Override
     public void erhalte(Artikel artikel) {
-        System.out.println("PrintAbonnent " +
-                  name + "hat eine neuen Zeiten erhelten, mit dem Artikel; "+ artikel.getTitle());
+        System.out.println("WebAbonnent " +
+                name + "hat eine neue Notifikation, mit dem Artikel; "+ artikel.getTitle());
 
     }
 

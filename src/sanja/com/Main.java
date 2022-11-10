@@ -1,9 +1,6 @@
 package sanja.com;
 
-import sanja.com.klatch.krone.zeitung.Abonnent;
-import sanja.com.klatch.krone.zeitung.Artikel;
-import sanja.com.klatch.krone.zeitung.Medienverlag;
-import sanja.com.klatch.krone.zeitung.PrintAbonnent;
+import sanja.com.klatch.krone.zeitung.*;
 
 public class Main {
 
@@ -20,7 +17,20 @@ public class Main {
 
 //        System.out.println(artikel1);
 //        System.out.println(artikel2);
- Abonnent  a = new PrintAbonnent("Peter");
+        Abonnent  a = new PrintAbonnent("Peter", klatsch);
+        Abonnent  b = new SMSAbonnent("Lara",klatsch);
+        Abonnent c =  new WebAbonnent("Mina",klatsch);
+
+        a.erhalte(artikel1);
+
+        klatsch.addSubscriber(a);
+        klatsch.addSubscriber(b);
+
+        klatsch.veroffentliche (artikel1);
+        klatsch.veroffentliche (artikel2);
+
+
+
 
 
 
